@@ -2,6 +2,8 @@
 
 <h1>Item - {{ item.name }}</h1>
 
+<strong>Created by:</strong> {{item.created_by}}
+
 <p><img src="{{ item.photo_url }}" width="250px" height="250px" /></p>
 
 <p><strong>Price:</strong> {{ "$%.2f"|format(item.price) }}</p>
@@ -9,6 +11,10 @@
 <p><strong>Category:</strong> {{ item.category }}</p>
 
 <p><strong>Store:</strong> {{ item.store.title }}</p>
+
+<form action="{{ url_for('main.add_to_cart', item_id=item.id) }}" method="POST">
+  <button type="submit">Add to cart</button>
+</form>
 
 <h2>Edit Item</h2>
 
