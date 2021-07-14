@@ -10,6 +10,8 @@ app.config.from_object(Config)
 app.secret_key = os.urandom(24)
 
 db = SQLAlchemy(app)
+print("Hello")
+print(db)
 
 ###########################
 # Authentication
