@@ -1,5 +1,8 @@
 FROM python:3.7-slim-buster
 
+ARG SQLALCHEMY_DATABASE_URI=${SQLALCHEMY_DATABASE_URI}
+ARG SECRET_KEY=${SECRET_KEY}
+
 ADD . /app
 WORKDIR /app
 COPY requirements.txt /
